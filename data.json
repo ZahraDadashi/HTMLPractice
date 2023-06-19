@@ -1,0 +1,23 @@
+
+{
+    "headers":[
+        "FName",
+        "LName",
+        "Age",
+        "Phone"
+    ],
+    "rows":[
+    [
+    "zahra",
+    "dadashi",
+    29,
+    "09241524"
+    ],
+     [
+    "maryam",
+    "salmaniyun",
+    29,
+    "09241524"
+    ]
+        ]
+}
