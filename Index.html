@@ -1,94 +1,97 @@
 <!ِDOCTYPE html>
-    <html>
+<html>
 
-    <head>
-        <title>My First HTMl Practice</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-        <link rel="stylesheet" href="styles.css">
-        <link src="Javascript.js">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+<head>
+    <title>My First HTMl Practice</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <link src="Javascript.js">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 
-    </head>
+</head>
 
-    <body>
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="img/4.jpg"></div>
-                <div class="swiper-slide"><img src="img/slider.jpg"></div>
-                <div class="swiper-slide"><img src="img/2.jpg"></div>
-                <div class="swiper-slide"><img src="img/3.jpg"></div>
-                <div class="swiper-slide"><img src="img/4.jpg"></div>
+<body>
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="img/4.jpg"></div>
+            <div class="swiper-slide"><img src="img/slider.jpg"></div>
+            <div class="swiper-slide"><img src="img/2.jpg"></div>
+            <div class="swiper-slide"><img src="img/3.jpg"></div>
+            <div class="swiper-slide"><img src="img/4.jpg"></div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+
+    <br>
+    <div>
+        <form onsubmit="SubmitFunc(); return false;" class="form-horizontal" id="form1">
+            <div class="form-group">
+                <label class="control-label col-sm-3" for="jdate">JalaliDate:</label>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control" id="jdate"><br />
+                </div>
             </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
-        </div>
+            <div class="form-group">
+                <label class="control-label col-sm-3" for="pnav">PurchaseNAVPerShare:</label>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control" id="pnav"><br />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-3" for="snav">SellNAVPerShare:</label>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control" id="snav"><br />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-3" for="nav">NAV:</label>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control" id="nav"><br />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-5">
+                    <button type="submit" class="btn btn-primary" form="form1">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="content">
+        <table class="table table-striped" id="table">
+            <thead>
+                <tr>
+                    <th class="col-md-3">JalaliDate</th>
+                    <th class="col-md-3">PurchaseNAVPerShare</th>
+                    <th class="col-md-3">SellNAVPerShare</th>
+                    <th class="col-md-3">NAV</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="tr"></tr>
+            </tbody>
+        </table>
+        <!--<button onclick="loadMoreButton()" class="btn btn-primary" id="load-more-button"><span>more</span></button>-->
+    </div>
+    <br />
+    <br />
+    <div id="chart"></div>
+    <button onclick="loadChart()" class="btn btn-primary" id="load-more-chart"><span>more</span></button>
+</body>
 
+</html>
 
-        <br>
-        <div>
-            <form onsubmit="SubmitFunc(); return false;" class="form-horizontal" id="form1">
-                <div class="form-group">
-                    <label class="control-label col-sm-3" for="jdate">JalaliDate:</label>
-                    <div class="col-sm-5">
-                        <input type="text" class="form-control" id="jdate"><br />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-sm-3" for="pnav">PurchaseNAVPerShare:</label>
-                    <div class="col-sm-5">
-                        <input type="text" class="form-control" id="pnav"><br />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-sm-3" for="snav">SellNAVPerShare:</label>
-                    <div class="col-sm-5">
-                        <input type="text" class="form-control" id="snav"><br />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-sm-3" for="nav">NAV:</label>
-                    <div class="col-sm-5">
-                        <input type="text" class="form-control" id="nav"><br />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-5">
-                        <button type="submit" class="btn btn-primary" form="form1">Submit</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-        <div class="content">
-            <table class="table table-striped" id="table">
-                <thead>
-                    <tr>
-                        <th class="col-md-3">JalaliDate</th>
-                        <th class="col-md-3">PurchaseNAVPerShare</th>
-                        <th class="col-md-3">SellNAVPerShare</th>
-                        <th class="col-md-3">NAV</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="tr"></tr>
-                </tbody>
-            </table>
-            <button onclick="loadMoreButton()" class="btn btn-primary" id="load-more-button"><span>more</span></button>
-        </div>
-        <br />
-        <br />
-        <div id="chart"></div>
-        <button onclick="loadChart()" class="btn btn-primary" id="load-more-chart"><span>more</span></button>
-    </body>
-
-    </html>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script src="http://code.highcharts.com/highcharts.js"></script>
-    <script src="http://code.highcharts.com/highcharts-more.js"></script>
-    <script src="http://code.highcharts.com/modules/exporting.js"></script>
-    <script  type="text/javascript" src="Javascript.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/highcharts-more.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css"/>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="Javascript.js"></script>

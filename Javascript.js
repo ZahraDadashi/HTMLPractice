@@ -35,7 +35,7 @@ function loadIntoTable() {
     const data = JSON.parse(localStorage.getItem("data"));
 
     for (const row of data) {
-        if (counter < initialItems) {
+        //if (counter < initialItems) {
             out += `
         <tr >
         <td class=data>${row.JalaliDate}</td>
@@ -44,37 +44,37 @@ function loadIntoTable() {
         <td class=data>${row.NAV.toLocaleString("en-US")}</td>
         </tr>
 `;
-        }
-        counter++;
+        //}
+        //counter++;
     }
     tableBody.innerHTML = out;
 }
 
-function loadMoreButton() {
-    const data = JSON.parse(localStorage.getItem("data"));
-    const currentDisplayedItems = document.querySelectorAll(".data").length;
-    var out = "";
-    var counter = 0;
-    for (const row of data) {
-        if (counter >= currentDisplayedItems && counter < loadItems + currentDisplayedItems) {
-            out += `
-        <tr>
-        <td class=data>${row.JalaliDate}</td>
-        <td class=data>${row.PurchaseNAVPerShare.toLocaleString("en-US")}</td>
-        <td class=data>${row.SellNAVPerShare.toLocaleString("en-US")}</td>
-        <td class=data>${row.NAV.toLocaleString("en-US")}</td>
-        </tr>
-`;
+//function loadMoreButton() {
+//    const data = JSON.parse(localStorage.getItem("data"));
+//    const currentDisplayedItems = document.querySelectorAll(".data").length;
+//    var out = "";
+//    var counter = 0;
+//    for (const row of data) {
+//        if (counter >= currentDisplayedItems && counter < loadItems + currentDisplayedItems) {
+//            out += `
+//        <tr>
+//        <td class=data>${row.JalaliDate}</td>
+//        <td class=data>${row.PurchaseNAVPerShare.toLocaleString("en-US")}</td>
+//        <td class=data>${row.SellNAVPerShare.toLocaleString("en-US")}</td>
+//        <td class=data>${row.NAV.toLocaleString("en-US")}</td>
+//        </tr>
+//`;
 
-        }
-        counter++;
+//        }
+//        counter++;
 
-    }
-    tableBody.innerHTML += out;
-    if (document.querySelectorAll(".data").length == data.length) {
-        LoadMoreButton.style.display = "none";
-    }
-}
+//    }
+//    tableBody.innerHTML += out;
+//    if (document.querySelectorAll(".data").length == data.length) {
+//        LoadMoreButton.style.display = "none";
+//    }
+//}
 
 loadIntoTable();
 
@@ -91,6 +91,7 @@ var swiper = new Swiper(".mySwiper", {
     keyboard: true,
 });
 
+//initialchart
 $(function () {
     var chart;
     var initialItems = 10;
@@ -218,9 +219,8 @@ $(function () {
 
 });
 
-
+//load chart with more button
 var btnclick = 10;
-
 function loadChart() {
     btnclick += 10;
     $(function () {
@@ -348,3 +348,6 @@ function loadChart() {
     });
 }
 
+$(document).ready(function () {
+    $("#table").DataTable();
+});
